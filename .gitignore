@@ -1,6 +1,4 @@
-# Xóa hoặc vô hiệu hóa các dòng sau (nếu có):
+# ignore
 *.exe
-# Hoặc các lệnh chung chung hơn như:
 build/
 bin/
-# ... nếu .exe nằm trong các thư mục này và em muốn theo dõi nó
