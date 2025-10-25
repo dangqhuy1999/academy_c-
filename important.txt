@@ -1,0 +1,62 @@
+
+// `printf`: Nhanh hơn (thường là mặc định) vì nó là hàm cấp thấp (low-level), xử lý trực tiếp buffer. Rất tốt khi cần định dạng phức tạp như căn lề, độ chính xác thập phân.
+// `cout`: Chậm hơn (mặc định) vì nó phải xử lý đồng bộ hóa với C stream (cho đến khi tắt đồng bộ). Cần dùng các hàm manipulators (std::fixed, std::setprecision, v.v.) để định dạng.
+
+// Việc mình không sử dụng `using namespace std;` trong các đoạn code mẫu là để tuân theo quy tắc lập trình tốt (good coding practice)
+
+```
+1. 💡 Vấn đề Xung đột Tên (Name Collision)
+Đây là lý do chính. Khi em dùng using namespace std;, em đang bảo trình biên dịch "cho phép tôi sử dụng tất cả tên (hàm, biến, class) đã được định nghĩa trong thư viện chuẩn C++ mà không cần tiền tố std::."
+
+Rủi ro: Nếu sau này em tự định nghĩa một hàm tên là count(), và em cũng dùng using namespace std;, trình biên dịch sẽ bối rối vì đã có một hàm std::count() trong thư viện <algorithm> rồi.
+
+Hậu quả: Điều này dẫn đến lỗi xung đột tên (name collision) hoặc, tệ hơn, làm chương trình chạy không như mong muốn vì nó dùng nhầm hàm.
+
+2. 📚 Duy trì Tính Minh bạch (Clarity)
+Việc viết std::cout, std::vector, hay std::string giúp code minh bạch và dễ đọc hơn rất nhiều:
+
+Nhận biết nguồn gốc: Khi thấy std::cout, em biết ngay đây là một thành phần chuẩn của thư viện C++, không phải là một hàm tự viết hoặc của bên thứ ba.
+
+Dễ bảo trì: Khi làm việc trong các dự án lớn, code của em có thể bị lẫn với code của người khác. Dùng std:: giúp phân biệt rõ ràng các thành phần.
+```
+
+// Dữ liệu đầu vào là một dòng chứa khoảng trắng (ví dụ: "123 456", "Hello World"). 
+// Nếu dùng std::cin >> n_temp, nó chỉ đọc được "123" hoặc "Hello".
+// Chuẩn bị để xử lý: Sau khi đọc toàn bộ dòng vào n_temp, 
+// lập trình viên sẽ dùng các hàm như ltrim(), rtrim(), hoặc stoi() (như trong ví dụ C++ bị lỗi trước đó) 
+// để làm sạch và chuyển đổi chuỗi này thành định dạng mong muốn.
+
+// Nếu bạn nhập: 1 2 3 4 (và muốn đọc nguyên dòng này)
+// std::cin >> n_temp --> n_temp = "1"
+// getline(std::cin, n_temp) --> 
+// n_temp = "1 2 3 4"
+
+```
+## A. Tối ưu Hiệu suất (Performance)
+
+`Không cần sao chép`: Khi bạn truyền std::vector<int>& numbers vào hàm, 
+chương trình không cần tạo một bản sao mới của toàn bộ vector đó. 
+Nó chỉ truyền địa chỉ bộ nhớ của vector gốc.
+
+`Tiết kiệm thời gian và bộ nhớ`: Vector có thể chứa hàng ngàn, 
+thậm chí hàng triệu phần tử. Việc tránh sao chép một lượng dữ liệu lớn 
+như vậy giúp chương trình chạy nhanh hơn rất nhiều và tiêu thụ ít bộ nhớ hơn.
+
+## B. Cho phép Thay đổi Giá trị Gốc (Side Effects)
+
+Sắp xếp trực tiếp: Khi hàm sort_order (hoặc std::sort bên trong nó)
+sắp xếp các phần tử, nó thay đổi trực tiếp vector gốc mà bạn đã truyền vào. 
+Nếu không có &, hàm sẽ chỉ sắp xếp trên bản sao, và vector gốc bên ngoài hàm
+sẽ không bị thay đổi.
+
+# 2. 💡 Tại sao KHÔNG cần Tham chiếu cho int a, int b
+
+`Đối với các kiểu dữ liệu cơ bản nhỏ như int, char, float (các kiểu dữ liệu nằm trong bộ nhớ máy tính nhỏ)`:
+`Kích thước nhỏ`: Kích thước của một int (thường là 4 byte) là rất nhỏ.
+`Tác dụng ngược`: Việc tạo ra một bản sao của int để truyền vào hàm còn 
+nhanh hơn và an toàn hơn việc truyền tham chiếu.
+
+`Tránh nhầm lẫn`: Truyền giá trị (int a) đảm bảo rằng giá trị của a bên ngoài 
+hàm không bao giờ bị thay đổi bởi hàm, tạo sự an toàn và minh bạch cho code 
+(không có tác dụng phụ).
+```
