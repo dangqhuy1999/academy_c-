@@ -30,12 +30,13 @@ int main(){
     int* &ref = ptr; // refPtr is a reference to ptr
     func3(ptr, soluong);
 
-    int n = 123;
-    int *pN = &n;
-    int* &refPtr = pN; // refPtr is a reference to pN
-    int **ppN = &pN; // ppN is a pointer to pN
-    std::cout << *refPtr << std::endl;
+    int n = 102;
+    int* ptr1 = &n;
+    int** ptr2 = &ptr1;
     
+    std::cout<< "\nptr1: " << &n << " " << *ptr1 << " " << ptr1 << " "<< *&ptr1 << " "<< &ptr1 << std::endl;
+    std::cout<< "\nptr2: " << &n << " " << **ptr2 << " " << *ptr2 << " "<< ptr2 << " "<< **&ptr2 << " "<< *&ptr2 << " "<< &ptr2 << " "<< *&ptr1 << std::endl;
+
     return 0;
 }
 
