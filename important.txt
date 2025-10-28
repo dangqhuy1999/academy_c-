@@ -60,3 +60,22 @@ nhanh hơn và an toàn hơn việc truyền tham chiếu.
 hàm không bao giờ bị thay đổi bởi hàm, tạo sự an toàn và minh bạch cho code 
 (không có tác dụng phụ).
 ```
+
+
+## Logic xử lý hàm
+
+- Logic thực hiện công việc (workflow quy trình code)
+- Logic xử lý kết quả(hàm để thực hiện 1 hành động cụ thể) 
+
+```
+Mở rộng thêm cho C++ (Nếu bạn muốn chuyên sâu hơn)
+Trong C++, khái niệm này còn được mở rộng và thay thế bằng các cơ chế hiện đại hơn, nhưng nguyên lý tách biệt logic vẫn giữ nguyên:
+
+Tên gọi hiện đại: Thay vì chỉ dùng Con trỏ Hàm (Function Pointers), lập trình viên C++ hiện đại thường dùng:
+
+Functors (Đối tượng hàm): Các lớp ghi đè toán tử () (giúp giữ trạng thái).
+
+Lambda Expressions (Biểu thức Lambda): Cú pháp gọn gàng để tạo ra một "callback" ngay tại chỗ (từ C++11 trở đi).
+
+Cả Functors và Lambdas đều đóng vai trò là "Logic Xử lý Kết quả" được truyền vào các hàm (ví dụ: các thuật toán của STL như std::sort, std::for_each), thay thế cho Con trỏ Hàm.
+```
