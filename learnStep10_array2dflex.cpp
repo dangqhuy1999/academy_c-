@@ -7,6 +7,10 @@
 
 int main() {
     /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
+    // Off synchronize I/O và un-tie cin/cout (Optimize I/O tuyệt đối)
+    std::ios_base::sync_with_stdio(false); 
+    std::cin.tie(NULL);
+    
     int n,q,k, qi, qj;
     std::vector<std::vector<int>> a;
     std::cin>> n>> q;
