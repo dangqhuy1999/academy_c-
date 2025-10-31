@@ -7,50 +7,43 @@ string rtrim(const string &);
 vector<string> split(const string &);
 
 /*
- * Complete the 'reverseArray' function below.
+ * Complete the 'simpleArraySum' function below.
  *
- * The function is expected to return an INTEGER_ARRAY.
- * The function accepts INTEGER_ARRAY a as parameter.
+ * The function is expected to return an INTEGER.
+ * The function accepts INTEGER_ARRAY ar as parameter.
  */
 
-vector<int> reverseArray(vector<int> a) {
-    reverse(a.begin(), a.end());
-    return a;
+int simpleArraySum(vector<int> ar) {
+    int initial_sum = 0;
+    int total = std::accumulate(ar.begin(), ar.end(), initial_sum);
+    return total;
 }
 
 int main()
 {
     ofstream fout(getenv("OUTPUT_PATH"));
 
-    string arr_count_temp;
-    getline(cin, arr_count_temp);
+    string ar_count_temp;
+    getline(cin, ar_count_temp);
 
-    int arr_count = stoi(ltrim(rtrim(arr_count_temp)));
+    int ar_count = stoi(ltrim(rtrim(ar_count_temp)));
 
-    string arr_temp_temp;
-    getline(cin, arr_temp_temp);
+    string ar_temp_temp;
+    getline(cin, ar_temp_temp);
 
-    vector<string> arr_temp = split(rtrim(arr_temp_temp));
+    vector<string> ar_temp = split(rtrim(ar_temp_temp));
 
-    vector<int> arr(arr_count);
+    vector<int> ar(ar_count);
 
-    for (int i = 0; i < arr_count; i++) {
-        int arr_item = stoi(arr_temp[i]);
+    for (int i = 0; i < ar_count; i++) {
+        int ar_item = stoi(ar_temp[i]);
 
-        arr[i] = arr_item;
+        ar[i] = ar_item;
     }
 
-    vector<int> res = reverseArray(arr);
+    int result = simpleArraySum(ar);
 
-    for (size_t i = 0; i < res.size(); i++) {
-        fout << res[i];
-
-        if (i != res.size() - 1) {
-            fout << " ";
-        }
-    }
-
-    fout << "\n";
+    fout << result << "\n";
 
     fout.close();
 
