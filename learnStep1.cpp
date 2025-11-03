@@ -1,7 +1,12 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
-int main() {
-    cout << "Hello, World!" << endl;
-    return 0;
+void do_something(vector<int> a){
+    cout << "Hello world";
+}
+
+int main(){
+    int a = 1000000000;
+    long long x = a * a;
+    cout << x << endl;
 }

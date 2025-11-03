@@ -10,7 +10,7 @@ int main() {
     // Off synchronize I/O và un-tie cin/cout (Optimize I/O tuyệt đối)
     std::ios_base::sync_with_stdio(false); 
     std::cin.tie(NULL);
-    
+
     int n,q,k, qi, qj;
     std::vector<std::vector<int>> a;
     std::cin>> n>> q;
@@ -18,6 +18,7 @@ int main() {
     for(int i =0;i<n;i++){
         std::vector<int> x;
         std::cin>>k;
+        x.reserve(k); // Notice: pre acllocations  to avoid reallocations
         for (int j =0;j<k;j++) {
             int value;
             std::cin>> value;
