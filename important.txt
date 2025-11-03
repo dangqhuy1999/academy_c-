@@ -36,8 +36,8 @@ Dùng std:: giúp phân biệt rõ ràng các thành phần.
 // Chuẩn bị để xử lý: Sau khi đọc toàn bộ dòng vào n_temp, 
 // lập trình viên sẽ dùng các hàm như ltrim(), rtrim(), hoặc stoi() (như trong ví dụ C++ bị lỗi trước đó) 
 // để làm sạch và chuyển đổi chuỗi này thành định dạng mong muốn.
-**
-// Nếu bạn nhập: 1 2 3 4 (và muốn đọc nguyên dòng này)
+
+// If you enter: 1 2 3 4 (and want to read this whole line)
 // std::cin >> n_temp --> n_temp = "1"
 // getline(std::cin, n_temp) --> 
 // n_temp = "1 2 3 4"
