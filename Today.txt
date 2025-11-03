@@ -1,0 +1,121 @@
+```C++
+You inherited a piece of code that 
+performs username validation for 
+your company's website. 
+The existing function works reasonably well, 
+but it throws an exception when 
+the username is too short. 
+Upon review, 
+you realize that 
+nobody ever defined the exception
+
+The inherited code is provided for you 
+in the locked section of your editor.
+Complete the code so that, 
+when an exception is thrown, 
+it prints `Too short: n` 
+(Where n is the length of the given username)
+
+Input Format:
+
+The first line contains an integer, t, 
+the number of test cases. 
+Each of the t subsequent lines 
+describes a test case as a single username string , u.
+
+Constraints:
+
+1 <= t <= 1000
+1 <= |u| <= 100
+```
+
+```algorithm
+Alice and Bob each created one problem for HackerRank. 
+A reviewer rates the two challenges, 
+awarding points on a scale from 1 to 100 for
+three categories: 
+problem clarity, (tính rõ ràng của vấn đề)
+orginality, (Tính độc đáo)
+and difficulty.(Độ khó)
+The rating for 
+Alice's challenge is the triplet a = (a[0],a[1],a[2]),
+and the rating for Bob's challenge is the triple b= (b[0],b[1],b[2])
+
+The task is to calculate their comparison points by
+comparing each category:
+```
+
+```sql
+Query  the list of CITY names starting with vowels
+(a,e,i, o or u) from STATION.
+Your result cannot contain duplicates.
+
+Query the two cities in STATION with
+the shortest and longest CITY names, 
+as well as their respective length
+(i.e.: number of characters in the name).
+If there is more than one smallest or largest city,
+choose the one that 
+comes first when 
+ordered alphabetically 
+
+Query the two cities in STATION with the shortest and longest CITY names, as well as their respective lengths (i.e.: number of characters in the name). If there is more than one smallest or largest city, choose the one that comes first when ordered alphabetically.
+The STATION table is described as follows:
+
+where LAT_N is the northern latitude and LONG_W is the western longitude.
+
+Sample Input
+
+For example, CITY has four entries: DEF, ABC, PQRS and WXY.
+
+Sample Output
+
+'''
+ABC 3
+PQRS 4
+Explanation
+'''
+
+When ordered alphabetically, the CITY names are listed as ABC, DEF, PQRS, and WXY, with lengths  and . The longest name is PQRS, but there are  options for shortest named city. Choose ABC, because it comes first alphabetically.
+
+Note
+You can write two separate queries to get the desired output. It need not be a single query.
+
+```
+
+
+```data structure
+Given a 6x6 2D array, arr, 
+an hourglass is a subset of values with
+indices falling in the following pattern: 
+
+There are 16 hourglasses in 6x6 array.
+The hourglass sum is the sum of the values in
+an hourglass.
+Calculate the hourglass sum for every hourglass in arr.
+
+arr = 
+
+-9 -9 -9  1 1 1 
+ 0 -9  0  4 3 2
+-9 -9 -9  1 2 3
+ 0  0  8  6 6 0
+ 0  0  0 -2 0 0
+ 0  0  1  2 4 0
+
+The 16 hourglass sums are:
+
+-63, -34, -9, 12, 
+-10,   0, 28, 23, 
+-27, -11, -2, 10, 
+  9,  17, 25, 18
+
+The highest hourglass sum is 28 from the hourglass 
+beginning at row 1, column 2:
+
+0 4 3
+  1
+8 6 6
+
+```
+
