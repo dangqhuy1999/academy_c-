@@ -15,6 +15,16 @@ Please append a semicolon ";" at the end of the query and enter your query in a 
 Query  the list of CITY names starting with vowels
 (a,e,i, o or u) from STATION.
 Your result cannot contain duplicates.
+
+Toán tử LIKE được sử dụng để so sánh một giá trị với 
+một chuỗi ký tự, 
+dựa trên mẫu được chỉ định. 
+
+Dấu phần trăm (\("\%"\)) hoạt động như 
+một ký tự đại diện, 
+khớp với bất kỳ chuỗi ký tự nào 
+có độ dài bằng không hoặc lớn hơn.
+
 */
 SELECT DISTINCT CITY
 FROM STATION
