@@ -119,3 +119,11 @@ beginning at row 1, column 2:
 
 ```
 
+
+``` 
+stringstream  // use for process IO for string handling 
+getline   // use for get input 1 line, including space, tab, enter 
+cin       // use for IO get 1 input, 
+fin, fout // use for file handling 
+cin.get() // use for pause program 
+``` 

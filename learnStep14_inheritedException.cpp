@@ -2,26 +2,55 @@
 #include <string>
 #include <sstream>
 #include <exception>
-using namespace std;
 
+/* Define the exception here 
 
-/* Define the exception here */
+You inherited a piece of code that 
+performs username validation for 
+your company's website. 
+The existing function works reasonably well, 
+but it throws an exception when 
+the username is too short. 
+Upon review, 
+you realize that 
+nobody ever defined the exception.
+
+The inherited code is provided for you 
+in the locked section of your editor. 
+Complete the code so that, 
+when an exception is thrown, 
+it prints `Too short: n` 
+(where  is the length of the given username).
+
+Sample Input
+
+3
+Peter
+Me
+Arxwwz
+Sample Output
+
+Valid
+Too short: 2
+Invalid
+
+*/
+
 class BadLengthException : public std::exception{
-    private: 
-        string full_error_message;
-    public:
-        BadLengthException(int length){
-            std::stringstream ss;
-            ss << length;
-            full_error_message = ss.str();
-        }
-        
-        const char* what() const noexcept override{
-            return full_error_message.c_str(); 
-        }
+	private:
+		std::string full_username_length;
+	public:
+		BadLengthException(int length){
+			std::stringstream ss;
+			ss << length;
+			full_username_length = ss.str();
+		} 
+		const char* what() const noexcept override {
+			return full_username_length.c_str();
+		}
 };
 
-bool checkUsername(string username) {
+bool checkUsername(std::string username) {
 	bool isValid = true;
 	int n = username.length();
 	if(n < 5) {
@@ -36,19 +65,19 @@ bool checkUsername(string username) {
 }
 
 int main() {
-	int T; cin >> T;
+	int T; std::cin >> T;
 	while(T--) {
-		string username;
-		cin >> username;
+		std::string username;
+		std::cin >> username;
 		try {
 			bool isValid = checkUsername(username);
 			if(isValid) {
-				cout << "Valid" << '\n';
+				std::cout << "Valid" << '\n';
 			} else {
-				cout << "Invalid" << '\n';
+				std::cout << "Invalid" << '\n';
 			}
 		} catch (BadLengthException e) {
-			cout << "Too short: " << e.what() << '\n';
+			std::cout << "Too short: " << e.what() << '\n';
 		}
 	}
 	return 0;
