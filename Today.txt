@@ -1,3 +1,20 @@
+```quotes
+Câu này dịch sang tiếng Anh là: "To succeed in winning people's hearts, you must first succeed in winning over yourself. There's no need to look far or think too much, because you are just a human being." Câu nói này có ý nghĩa rằng việc tự làm chủ và chinh phục bản thân là bước đầu tiên và quan trọng nhất để có thể tác động đến người khác. Nó nhấn mạnh tầm quan trọng của việc phát triển bản thân trước khi mong muốn thay đổi hoặc ảnh hưởng đến người khác, và gợi ý rằng sự phát triển đó có thể bắt nguồn từ việc chấp nhận và hiểu rõ bản chất con người mình.
+Giải thích câu nói
+"Để thành công trong việc thu phục nhân tâm thì trước tiên mày phải thành công trong việc thu phục chính bản thân mày": Ý nghĩa chính là bạn không thể có khả năng dẫn dắt, thuyết phục hay gây ảnh hưởng lớn đến người khác nếu bạn không tự kiểm soát và làm chủ được bản thân mình.
+"Chứ không cần nhìn hay nghĩ đâu xa": Câu này nhấn mạnh rằng việc cải thiện bản thân, phát triển nội lực là trọng tâm, không cần phải tìm kiếm những giải pháp phức tạp từ bên ngoài.
+"Vì mày chỉ là con người": Câu này có thể hiểu theo hai hướng:
+Chấp nhận giới hạn của bản thân: Con người ai cũng có những sai sót, điểm yếu và giới hạn. Việc chấp nhận những điều này là bước đầu để bạn có thể làm việc với chúng một cách hiệu quả, thay vì chối bỏ.
+Bắt đầu từ bản chất con người: Vì bạn là một con người, nên việc phát triển từ bên trong, từ chính bản thân mình là con đường hợp lý và thiết thực nhất.
+Câu nói này có đúng không?
+Đúng, câu nói này hoàn toàn có lý.
+Lý do:
+Nền tảng để tạo sự tin tưởng: Nếu bạn không thể tự tin vào chính mình, làm sao người khác có thể tin tưởng bạn? Việc làm chủ cảm xúc, suy nghĩ và hành động sẽ tạo ra một sức hút và sự đáng tin cậy cần thiết để thu phục người khác.
+Tạo ra sức ảnh hưởng tích cực: Khi bạn đã đạt được sự tự chủ, bạn sẽ có khả năng giao tiếp và tương tác với người khác một cách hiệu quả hơn. Bạn sẽ hiểu rõ hơn về những gì có thể tác động đến họ, từ đó có thể truyền cảm hứng và dẫn dắt họ một cách tích cực hơn.
+Phản ánh bản thân: Việc cố gắng làm hài lòng người khác mà không hiểu mình là gì sẽ dẫn đến sự thiếu chân thực. Câu nói này nhắc nhở bạn rằng, chỉ khi bạn là chính mình, bạn mới có thể thực sự kết nối và ảnh hưởng sâu sắc đến người khác.
+
+```
+
 ```C++
 You inherited a piece of code that 
 performs username validation for 
