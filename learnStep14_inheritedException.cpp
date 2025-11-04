@@ -12,7 +12,7 @@ class BadLengthException : public std::exception{
     public:
         BadLengthException(int length){
             std::stringstream ss;
-            ss<< length;
+            ss << length;
             full_error_message = ss.str();
         }
         

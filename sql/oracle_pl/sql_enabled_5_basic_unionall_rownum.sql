@@ -101,6 +101,13 @@ Thứ tự      Mệnh đề     Hành động của Database
                         Sắp xếp toàn bộ tập hợp kết quả
                         của bước 5 
                         (thường là bước cuối cùng).
+
+
+UNION ALL: Gộp hai kết quả (thành phố ngắn nhất và thành phố dài nhất) vào một tập hợp kết quả cuối cùng, kể cả dòng trùng lặp.
+UNION ALL: Merge 2 results (shortest city and longest city) into one final result set, including duplicate rows.
+
+UNION: Gộp hai kết quả (thành phố ngắn nhất và thành phố dài nhất) vào một tập hợp kết quả cuối cùng, loại bỏ dòng trùng lặp.
+UNION: Merge 2 results (shortest city and longest city) into one final result set, removing duplicate rows.
 */
 
 (
