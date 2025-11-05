@@ -41,10 +41,13 @@ class BadLengthException : public std::exception{
 	private:
 		std::string full_username_length;
 	public:
-		BadLengthException(int length){
+		BadLengthException(int length) : full_username_length(std::to_string(length)){ //Using  Initialize List
+			
+			/* Using Constructor body
 			std::stringstream ss;
 			ss << length;
 			full_username_length = ss.str();
+			*/
 		} 
 		const char* what() const noexcept override {
 			return full_username_length.c_str();

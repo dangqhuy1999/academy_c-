@@ -1,7 +1,21 @@
 #include <bits/stdc++.h>
+#include <exception>
+#include <string>
 using namespace std;
 
-void do_something(vector<int> a){
+class badLengthException : public std::exception{
+    private:
+        std::string fullname_length;
+    
+    public:
+        badLengthException(int length_){
+            fullname_length = "Have error at: " + std::to_string(length_);
+        }
+
+};
+
+void do_something(vector<int> a)
+{
     cout << "Hello world";
 }
 

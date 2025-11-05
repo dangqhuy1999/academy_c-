@@ -144,3 +144,22 @@ cin       // use for IO get 1 input,
 fin, fout // use for file handling 
 cin.get() // use for pause program 
 ``` 
+
+```
+Tóm lại:
+
+90% trường hợp: 
+Dùng Initializer List 
+(hiệu suất và tính đúng đắn).
+
+Logic phức tạp 
+VÀ thành viên KHÔNG phải const/reference: 
+Dùng Thân Hàm Constructor 
+(dễ đọc và linh hoạt).
+
+Logic phức tạp 
+VÀ thành viên LÀ const/reference: 
+Dùng Hàm Static Helper 
+kết hợp với Initializer List 
+(là cách duy nhất đúng).
+```
