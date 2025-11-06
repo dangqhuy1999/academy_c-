@@ -40,8 +40,12 @@ Invalid
 class BadLengthException : public std::exception{
 	private:
 		std::string full_username_length;
+		std::string full_username_length2;
 	public:
-		BadLengthException(int length) : full_username_length(std::to_string(length)){ //Using  Initialize List
+		BadLengthException(int length) : 	
+		full_username_length{std::to_string(length)}, // uniform initialization
+		full_username_length2{std::to_string(length+1)}	// uniform initialization
+		{
 			
 			/* Using Constructor body
 			std::stringstream ss;
