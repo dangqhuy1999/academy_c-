@@ -23,6 +23,7 @@ for each record in the table:
 "Scalene Triangle" - if no sides are equal
 "Invalid Triangle" - if the given side lengths cannot form a triangle
 
+Notes: Sum of any 2 sides must be greater than the 3rd side
 */
 
 

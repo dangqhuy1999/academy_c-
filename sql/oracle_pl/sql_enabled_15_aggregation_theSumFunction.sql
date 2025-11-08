@@ -31,4 +31,22 @@ from city;
 SELECT ceil(avg(population))
 from city;
 
+
+-- Query the sum of the populations 
+-- for all Japanese cities in CITY. 
+-- The COUNTRYCODE for Japan is JPN.
+
+
+SELECT sum(population)
+FROM CITY
+where COUNTRYCODE = 'JPN';
+
+
+-- Query the difference (result of subtract) between 
+-- the maximum and minimum populations
+-- in CITY
+
+SELECT max(population) - min(population)
+from CITY;
+
 exit;
