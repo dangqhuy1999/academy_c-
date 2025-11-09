@@ -24,5 +24,8 @@ Your result cannot contain duplicates.
 (e.g., a pattern for LIKE).
 
 */
-SELECT DISTINCT(CITY) FROM STATION WHERE CITY LIKE '%a' OR CITY LIKE '%e' OR CITY LIKE '%i' OR CITY LIKE '%o' OR CITY LIKE '%u';
+SELECT DISTINCT(CITY) 
+FROM STATION 
+where regexp_like(CITY, '[aeiou]$', 'i')
+-- WHERE CITY LIKE '%a' OR CITY LIKE '%e' OR CITY LIKE '%i' OR CITY LIKE '%o' OR CITY LIKE '%u';
 exit;
