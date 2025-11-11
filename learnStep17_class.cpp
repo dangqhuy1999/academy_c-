@@ -125,15 +125,16 @@ class Student {
     std::string first_name;
     std::string last_name;
     int standard;
-    bool is_valid_name(const std::string& name) const {
-        
-        return std::all_of(name.begin(), name.end(), [](char c) {
-            return c >= 'a' && c <= 'z';
-        });
-    }
-  public:  
+
+    //define a helper function to validate name 
+    bool is_valid_name(const std::string& name) const { 
+         
+        return std::all_of(name.begin(), name.end(), [](char c) { 
+            return c >= 'a' && c <= 'z'; 
+        }); 
+    } 
+  public:   
     void set_age(int age_){
-        
         this->age = age_; 
     }
     int get_age(){

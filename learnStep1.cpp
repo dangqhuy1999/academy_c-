@@ -24,3 +24,5 @@ int main(){
     long long x = a * a;
     cout << x << endl;
 }
+
+// done

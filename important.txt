@@ -90,3 +90,4 @@ Lambda Expressions (Biểu thức Lambda): Cú pháp gọn gàng để tạo ra 
 
 Cả Functors và Lambdas đều đóng vai trò là "Logic Xử lý Kết quả" được truyền vào các hàm (ví dụ: các thuật toán của STL như std::sort, std::for_each), thay thế cho Con trỏ Hàm.
 ```
+// done

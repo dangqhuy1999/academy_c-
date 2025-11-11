@@ -1,10 +1,10 @@
-#include <iostream> //  use for cin, cout
-#include <string> // use for string
-#include <map> // use for map
-#include <algorithm> // use for find_if
-#include <functional> // use for std::ptr_fun and not1
-#include <cctype> // use for isspace
-#include <cmath> // use for pow
+#include <iostream>     //  use for cin, cout
+#include <string>       // use for string
+#include <map>          // use for map
+#include <algorithm>    // use for find_if
+#include <functional>   // use for std::ptr_fun and not1
+#include <cctype>       // use for isspace
+#include <cmath>        // use for pow
 
 std::string ltrim(const std::string &);
 std::string rtrim(const std::string &);
@@ -31,10 +31,11 @@ int main()
         std::cout << "Nothing" << std::endl;
     }
     return 0;
+    
 }
 
 std::string ltrim(const std::string &str) {
-    std::string s(str);
+    std::string s{str};
 
     s.erase(
         s.begin(),
@@ -45,12 +46,11 @@ std::string ltrim(const std::string &str) {
 }
 
 std::string rtrim(const std::string &str) {
-    std::string s(str);
+    std::string s{str};
 
     s.erase(
         std::find_if(s.rbegin(), s.rend(), [](unsigned char ch){ return !std::isspace(ch); }).base(),
         s.end()
     );
-
     return s;
 }

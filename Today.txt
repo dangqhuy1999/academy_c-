@@ -1,5 +1,12 @@
 ```quotes
-Câu này dịch sang tiếng Anh là: "To succeed in winning people's hearts, you must first succeed in winning over yourself. There's no need to look far or think too much, because you are just a human being." Câu nói này có ý nghĩa rằng việc tự làm chủ và chinh phục bản thân là bước đầu tiên và quan trọng nhất để có thể tác động đến người khác. Nó nhấn mạnh tầm quan trọng của việc phát triển bản thân trước khi mong muốn thay đổi hoặc ảnh hưởng đến người khác, và gợi ý rằng sự phát triển đó có thể bắt nguồn từ việc chấp nhận và hiểu rõ bản chất con người mình.
+Câu này dịch sang tiếng Anh là: 
+"To succeed in winning people's hearts, 
+you must first succeed 
+in winning over yourself. 
+There's no need 
+to look far 
+or think too much, 
+because you are just a human being." Câu nói này có ý nghĩa rằng việc tự làm chủ và chinh phục bản thân là bước đầu tiên và quan trọng nhất để có thể tác động đến người khác. Nó nhấn mạnh tầm quan trọng của việc phát triển bản thân trước khi mong muốn thay đổi hoặc ảnh hưởng đến người khác, và gợi ý rằng sự phát triển đó có thể bắt nguồn từ việc chấp nhận và hiểu rõ bản chất con người mình.
 Giải thích câu nói
 "Để thành công trong việc thu phục nhân tâm thì trước tiên mày phải thành công trong việc thu phục chính bản thân mày": Ý nghĩa chính là bạn không thể có khả năng dẫn dắt, thuyết phục hay gây ảnh hưởng lớn đến người khác nếu bạn không tự kiểm soát và làm chủ được bản thân mình.
 "Chứ không cần nhìn hay nghĩ đâu xa": Câu này nhấn mạnh rằng việc cải thiện bản thân, phát triển nội lực là trọng tâm, không cần phải tìm kiếm những giải pháp phức tạp từ bên ngoài.
@@ -16,6 +23,42 @@ Phản ánh bản thân: Việc cố gắng làm hài lòng người khác mà k
 ```
 
 ```C++
+
+Làm thế nào 
+để ánh xạ yêu cầu bài toán 
+thành các hàm 
+và thư viện C++ cụ thể?
+Thực ra đây là quá trình tư duy, 
+không phải việc ghi nhớ.
+
+Quy trình 3 bước 
+để phân tích mọi bài toán:
+
+Bước	                  Mục đích	                            Câu hỏi cần đặt ra
+B1: Xác định            Chọn Container (bộ chứa)              Dữ liệu là gì? Nó có cần thay đổi kích thước không?
+Kiểu Dữ liệu            phù hợp để lưu trữ.                   Nó có cần sắp xếp thứ tự không?
+
+B2: Xác định            Chọn Thuật toán (Algorithm)           Em muốn làm gì? Duyệt qua?
+Thao tác Chính          phù hợp để xử lý dữ liệu.             Tìm kiếm? Sắp xếp? Thay đổi?
+
+B3: Xác định            Chọn các hàm I/O, định dạng,          Cần đọc/ghi theo cách nào?
+Công cụ Hỗ trợ          hoặc các tính năng đặc biệt           Cần định dạng số không? Cần bắt lỗi không?
+
+
+Ví dụ 1: Bài toán `Student` của Em
+
+Bước	                  Phân tích	                            Hàm/thư viện được chọn
+B1: Xác định            Cần lưu trữ 4 thuộc tính              `struct` hoặc `class` để gom nhóm.
+Kiểu Dữ liệu            (int, string, string, int)            `std::string` cho tên (<string>).
+
+B2: Xác định            Cần nhập (read) và                    `operator>>` và `operator<<` (Overloading I/O)
+Thao tác Chính          xuất (print) dữ liệu.                 để việc nhập/xuất trực quan hơn.
+
+B3: Xác định            Yêu cầu phải kiểm tra lỗi             `std::cin.exceptions()` (để bắt lỗi kiểu dữ liệu)
+Công cụ Hỗ trợ          kiểu dữ liệu và ràng buộc             `is.setstate(std::ios::failbit)` (để báo lỗi ràng buộc).
+                        độ dài.
+
+
 You inherited a piece of code that 
 performs username validation for 
 your company's website. 
@@ -134,32 +177,30 @@ beginning at row 1, column 2:
   1
 8 6 6
 
-```
-
-
+``` 
+ 
+ 
 ``` 
 stringstream  // use for process IO for string handling 
-getline   // use for get input 1 line, including space, tab, enter 
-cin       // use for IO get 1 input, 
-fin, fout // use for file handling 
-cin.get() // use for pause program 
+getline       // use for get input 1 line, including space, tab, enter 
+cin           // use for IO get 1 input, 
+fin, fout     // use for file handling 
+cin.get()     // use for pause program 
 ``` 
+ 
+size_t(unsigned integer) is a data type 
+You must use when work with SIZE, LENGTH and INDEX in C++. 
 
-```
-Tóm lại:
+Trong C ngta dùng #define 
+để định nghĩa hằng số 
+mà không quan tâm tới kiểu dữ liệu
+Hậu quả: 
+Dễ gây lỗi 
+vì MAX_SIZE không có kiểu dữ liệu 
+(typeless). 
+Nó có thể gây ra lỗi 
+khi so sánh với các kiểu dữ liệu khác.
 
-90% trường hợp: 
-Dùng Initializer List 
-(hiệu suất và tính đúng đắn).
-
-Logic phức tạp 
-VÀ thành viên KHÔNG phải const/reference: 
-Dùng Thân Hàm Constructor 
-(dễ đọc và linh hoạt).
-
-Logic phức tạp 
-VÀ thành viên LÀ const/reference: 
-Dùng Hàm Static Helper 
-kết hợp với Initializer List 
-(là cách duy nhất đúng).
-```
+Trong C++ ngta dùng `const` 
+hoặc `constexpr` 
+để định nghĩa hằng số đấy nhé.

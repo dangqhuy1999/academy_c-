@@ -27,7 +27,56 @@ using namespace std;
 /*
 More details about overloading operator:
 
-*/
+Design a class named Box 
+whose dimensions are integers 
+and private to the class. 
+The dimensions are labelled:
+length l, breadth b 
+and height h.
+The default constructor of the class 
+should initialize l,b,and h to 0.
+The parameterized constructor Box
+(int length, int breadth, int height)
+should initialize Box's l,b and h 
+to length , breadth and height.
+The copy constructor Box(Box B)
+Should set l,b and h 
+to B's l,b,and h, respectively.
+Apart from the above,
+the class should have 4 functions;
+- int getLength() - Return box's length
+- int getBreadth () - Return box's breadth
+- int getHeight () - Return box's height
+- long long CalculateVolume() - Return the volume of the box
+
+Overload the operator < and << and others;
+
+Tell me about friend function:
+Từ khóa friend (bạn) 
+cho phép một hàm hoặc một lớp bên ngoài 
+truy cập vào các thành viên 
+private và protected của một lớp khác
+
+Why we have std::ostream& operator<<(ostream& out, Box& B)?
+`ostream& operator<<` is the signature 
+for the insertion operator in C++(like std::cout).
+
+It is fundamental for allowing objects 
+of custom data types
+to be printed in a readable format.
+Here's a breakdown:
+- ostream&: 
+  The function returns a reference 
+  to an `ostream` object. 
+  This is crucial 
+  because it allows 
+  for chaining of output operations,
+  multiple insertion operations together. 
+  such as `std::cout << "Hello" << " World!";`
+- operator<<:
+  This is the function name 
+  for the insertion operator.
+*/ 
 
 
 class Box{
