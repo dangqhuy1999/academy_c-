@@ -149,10 +149,12 @@ class Box{
     private:
         int l,b, h;
     public:
+		//constructor 
         Box() : l{0},b{0}, h{0} {}
         Box(int length, int breadth, int height) : l{length},b{breadth}, h{height} {}
         Box(const Box& B) : l{B.l},b{B.b}, h{B.h} {}
         
+		// getters
         int getLength() const {
             return this->l;
         } 
@@ -163,10 +165,12 @@ class Box{
             return this->h;
         }
         
+		// other methods
         long long CalculateVolume() const {
             return (long long)l * b * h;;
         }
         
+		// overload operator <
         bool operator<(Box& b) const {
             if(this->l < b.l){
                 return true;
@@ -182,6 +186,7 @@ class Box{
 
 };
 
+// overload operator <<
 ostream& operator<<(ostream& out, Box& B){
     out << B.getLength() << " "<< B.getBreadth() << " "<< B.getHeight() << " ";
     return out;
