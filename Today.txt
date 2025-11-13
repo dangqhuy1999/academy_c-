@@ -304,3 +304,36 @@ Sử dụng/Thay đổi: Sau đó, em dùng Setter để thay đổi:C++myBox.se
 // Giả sử sau này muốn thay đổi tiếp:
 myBox.setBreadth(25); 
 Tóm lại:Constructor là để xây dựng đối tượng.Setter là để quản lý và thay đổi trạng thái của đối tượng đó sau khi nó đã được xây dựng.Em không thể dùng Constructor để thay đổi một đối tượng đã có. Đó là lý do Setter tồn tại.
+
+```
+nếu không nắm vững cách cú pháp vận hành như nào
+ứng dụng từng cú pháp như nào
+thì mày rất khó học những thứ cao hơn như giải thuật, cấu trúc dữ liệu, phân tích thiết kế hệ thống,....
+hôm nay tao sẽ hướng dẫn mày tường tận chi tiết  về một thứ mà mọi người cảm thấy rất khó đó chính là tham chiếu(&)
+#################
+######################
+
+
+Lập trình viên
+
+Kĩ năng cứng: 
+C++, SQL, thuật toán, tiếng anh(đa số code là tiếng anh)...
+
+Kĩ năng mềm: 
+giải quyết được xung đột giao tiếp giữa coder và non-code(customer, co-worker)
+
+
+code có tốt đến mấy
+giao tiếp khách hàng có hay đến máy
+tất cả sẽ bị đổ sập vì
+Thiếu kĩ năng tổ chức
+Tổ chức cái gì?
+
+giả sử: 
+bạn có rất nhiều khách hàng
+bạn có nhiều dự án đang dỡ phải làm
+bạn sắp xếp lịch cho việc cá nhân học code, người yếu ,gia đình, ngủ, tập thế dục.. 
+
+tâm lý dễ nãn khi không biết sắp xếp hợp lý 
+hiêu suát công việc sẽ giảm theo cấp số nhân.
+```
