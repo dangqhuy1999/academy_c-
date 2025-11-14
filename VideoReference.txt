@@ -1,0 +1,240 @@
+Tôi là Huy, một lập trình viên
+hôm nay tôi sẽ cùng các bạn đi qua 
+một khái niệm khác liên quan đến lập trình 
+chính là reference(Tham chiếu &) trong C++.
+
+với quy mô này chúng tôi sẽ đi từ 
+
+--> code cục bộ tại tham chiếu tại hàm main() 
+--> tham chiếu của gọi các hàm phụ bên ngoài hàm main()
+--> tham chiếu bên trong class 
+
+Nào chúng ta cùng bắt đầu phần 1
+
+Tham chiếu tại hàm main() 
+ 
+int main(){ 
+	int a = 10; // khởi tạo một biến số nguyên a =10
+	int &r = a; 
+	// - Sau đó khởi tạo một tham chiếu của a tên là r
+	// - Tham chiếu phải được khởi tạo ngay lập tức
+	// - Khi một tham chiếu được liên kết với 1 biến thì 
+	// 		nó sẽ mãi mãi tham chiếu tới biến đó.
+	// - Vấn đề về bộ nhớ: Bạn có thể sử dụng `&` để chỉ ra rằng
+	//		cả biến gốc và biến tham chiếu có cùng 1 địa chỉ vùng nhớ
+	//		Điều này củng cố ý tưởng chúng chỉ là một.
+	r= 20; 
+	std::cout<<r; // r rõ ràng là bằng 20
+	std::cout<<a; // lúc này a là 20
+	
+
+	std::cout<<&r; // r rõ ràng là bằng 20
+	std::cout<<&a; // lúc này a là 20
+	// output cho thay ca a va r co cung dia chi
+
+	/*
+	Vậy, 
+	Có gì khác biệt, nhìn vào thì thấy 
+	- Khi r thay đổi a cũng thay đổi theo
+	- Và chúng ta cũng có thể gọi r là alias(tên gọi khác) của a.
+	*/
+	
+	// Thêm nữa nè,
+	
+	std::vector<int> vec{1,4,5,3,7};
+	
+	for (int& item : vec){
+		std::cout<< item<<"\n";
+	}
+	
+	/*
+	Bình thường nếu for(int item:vec)thì cũng được thôi
+	nhưng mỗi lần duyệt phân tử tiếp theo trong vec
+	thì nó sẽ phải thao tác copy giá trị trong vec vào item
+	gây ra thêm một bước làm chậm đi code
+	
+	Còn nếu,
+	dùng for(int& item:vec)
+	thì khi duyệt từng phần tử vec
+	nó sẽ lấy thẳng phần tử trong vec đó ra luôn
+	không cần phải copy,
+	
+	Ừ,
+	Thế bọn bên trên giải quyết gì ở thực tế.
+	*/
+	
+	
+}
+
+// 
+Sau khi đi qua phần một 
+với những kiến thức cơ bản về tham chiếu & 
+thì chúng ta sẽ đến phần quan trọng
+tỏ rõ sức mạnh của tham chiếu nhất 
+trong lập trình C++.
+
+Đó chính là,
+`--> tham chiếu của gọi các hàm phụ bên ngoài hàm main()`
+
+// Để cho nó dễ hiểu từ đầu thì em nghĩ nên là
+// khởi tạo hàm với tham số có tham chiếu 
+```
+Practical use(ứng dụng thực tiễn)
+I.
+
+void change_a(int &a) 
+	a = 30;
+int main(){
+	
+	int a = 10;
+	change_a(a);
+	std::cout <<a<<"\n"; // a bây giờ là 30
+	return 0;
+}
+
+II. The value be swaped each other:
+
+void swap( int& c, int& d){
+	int temp = c;
+	c = d;
+	d= temp;
+}
+int main(){
+	
+	int a =10, b = 20;
+	std::cout << a << b << '\n';
+	swap(a, b)
+	
+	return 0;
+}
+
+NOTICE:
+when you define `void swap( int& c, int& d)`, you're telling with compiler that 
+`c` and `d` is other name(alias) for the original variable.
+
+and when you call `swap(a, b)` 
+you will wonder if why dont we call `swap(&a, &b)`
+okey if you have same with my thinking, you are so deeply good.
+`int&c` is a parameter you define 
+`a` is a variable you passing 
+
+let's imagine this case: `int&c = a;`
+in the fact that , call function is other shape of `int&c = a;`
+
+
+```
+Bây giờ thì tham chiếu là tham số ở bên trong hàm change_a 
+Có 2 vấn đề chính của phần chỉ truyền tham chiếu vào hàm 
+- Thứ nhất là biến bên ngoài sẽ bị thay đổi 
+nếu như bên trong hàm thay đổi nó 
+ okey translate to English
+
+- The second, when we call change_a(a) at `main()` function,
+you just used share memory
+between int& a(in this function) and a(in main() function), 
+no longer need copy value, help your program run faster.
+
+exclude (const or pointer, just focus on reference)
+The next thing of (passing by reference), 
+you will go (the function return reference)
+And now, function will become a (l-value of =)
+follow like this:
+
+```
+int& func1(int& a){
+	return a;
+}
+
+int main(){
+	
+	int a = 10;
+	
+	std::cout<< a<< "\n"; // a = 10
+    
+	func1(a) = 20; // and now a will change to 20
+    
+    std::cout<< &func1(a) << "\n"; the address of func1 is mainly address of a
+	
+	std::cout<< &a << "\n"; output is address of a
+
+    std::cout<< func1(a) << "\n"; 
+	
+	std::cout<< a << "\n";
+
+	return 0;
+}
+```
+
+Other ability of (function return reference)
+- overload operator of object orientation
+- do both setter and getter at the time
+We will process at topic 3 reference in class 
+
+With all mainly points about reference 
+we will focus on overload operator and setter/getter  use reference at class
+
+First, getter/setter with reference
+
+class Box{
+	private:
+		int l, b, h;
+	public:
+		// Constructor 
+		// to initialize value for Box
+		Box() : l{0}, b{0}, h{0} {}
+		Box(int length, int breadth, int height) : l{length},b{breadth}, h{height} {}
+        Box(const Box& B) : l{B.l},b{B.b}, h{B.h} {}
+        
+		//  reference  with l-value to 
+		Box& setLength(int val) { 
+			this->l = val; 
+			return *this; // Trả về tham chiếu đến chính đối tượng hiện tại
+		}
+		Box& setBreadth(int val) { 
+			this->b = val; 
+			return *this; // Trả về tham chiếu đến chính đối tượng hiện tại
+		}
+		Box& setHeight(int val) { 
+			this->h = val; 
+			return *this; // Trả về tham chiếu đến chính đối tượng hiện tại
+		}
+
+		// Getter KHÔNG đổi (const version) - Sử dụng khi đối tượng là const
+		int getHeight() const { 
+			return h; 
+		}
+
+		// Getter ĐỔI (non-const version) - Sử dụng khi muốn thay đổi giá trị
+		int& getHeight() { 
+			return h; 
+		}
+}
+
+// Định nghĩa hàm nạp chồng toán tử <<
+// HÀM NÀY TRẢ VỀ THAM CHIẾU ĐẾN OSTREAM&
+std::ostream& operator<<(std::ostream& out, const Box& b) {
+    out << "Chieu dai: " << b.getLength() 
+        << ", Chieu rong: " << b.getBreadth() 
+        << ", Chieu cao: " << b.getHeight();
+    
+    // Quan trọng: Trả về out (tham chiếu đến ostream)
+    return out; 
+}
+
+int main(){
+
+	Box b{10,5,8};
+	
+    // Sử dụng tính năng gọi chuỗi (chaining) nhờ trả về *this&
+    b.setLength(20).setBreadth(10).setHeight(15);
+
+	std::cout << b << std::endl; // Sử dụng toán tử nạp chồng
+
+	Box b_mutable;
+	b_mutable.getHeight() = 10; // Gọi phiên bản non-const (int&)
+
+	const Box b_const;
+	// b_const.getHeight() = 10; // Lỗi biên dịch! Chỉ gọi được phiên bản const (int), không gán được.
+
+	return 0;
+}
