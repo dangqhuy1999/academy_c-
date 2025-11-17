@@ -45,6 +45,54 @@ B3: Xác định            Chọn các hàm I/O, định dạng,          Cần
 Công cụ Hỗ trợ          hoặc các tính năng đặc biệt           Cần định dạng số không? Cần bắt lỗi không?
 
 
+###OVERALL
+CỤ THỂ Coding là làm việc như này, 
++ việc đọc-ghi(thao tác xử lý) 
++ lên dữ liệu đó(data) 
++ nếu cần có thể dùng công cụ hỗ trợ xử lý(I/O function).
+###DETAIL
++ Đọc: 
+  _lấy giá trị hiện tại của biến để sử dụng
+  _(ví dụ: in ra màn hình, so sánh, gán cho một biến khác)
++ Ghi:
+  _Thay đổi giá trị bên trong của biến
+  _(Ví dụ: gán một giá trị mới
+    gọi các hàn thành viên làm thay đổi trạng thái của nó)
+###PRACTICE_USE
+  
+```Not use const(vừa xem vừa ghi dữ liệu được vào biến)
+for (std::string& word : msg) {
+    // Đọc: Hợp lệ
+    std::cout << word << std::endl; 
+
+    // Ghi/Sửa đổi: Hợp lệ!
+    word = "world"; // Thay đổi phần tử gốc trong msg thành "world"
+
+    // Ghi/Sửa đổi: Hợp lệ!
+    word.push_back('!'); // Thêm dấu chấm than vào phần tử gốc trong msg
+}
+```
+
+```Use const(chỉ đọc )
+for (const std::string& word : msg) {
+    // Đọc: Hợp lệ
+    std::cout << word << std::endl; 
+    
+    // Đọc: Hợp lệ
+    if (word == "hello") {
+        // ...
+    }
+
+    // Ghi/Sửa đổi: Báo lỗi biên dịch!
+    // word = "world"; 
+
+    // Ghi/Sửa đổi: Báo lỗi biên dịch! (ví dụ: không thể gọi hàm push_back() nếu word là const)
+    // word.push_back('!'); 
+}
+
+```
+
+
 Ví dụ 1: Bài toán `Student` của Em
 
 Bước	                  Phân tích	                            Hàm/thư viện được chọn

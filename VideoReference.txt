@@ -1,3 +1,15 @@
+$$$
+TÍNH KỶ LUẬT
+SỰ KIÊN NHẪN
+LÒNG BIẾT ƠN
+
+Lòng trung thực của bạn không thể bị trộm.
+
+Kiến thức và kỹ năng của bạn là tài sản gắn liền với bạn.
+
+Sự bình yên nội tại mà bạn xây dựng qua thiền định hay sự tha thứ không thể bị ai tịch thu.
+$$$
+
 Tôi là Huy, một lập trình viên
 hôm nay tôi sẽ cùng các bạn đi qua 
 một khái niệm khác liên quan đến lập trình 
@@ -5,9 +17,9 @@ chính là reference(Tham chiếu &) trong C++.
 
 với quy mô này chúng tôi sẽ đi từ 
 
---> code cục bộ tại tham chiếu tại hàm main() 
---> tham chiếu của gọi các hàm phụ bên ngoài hàm main()
---> tham chiếu bên trong class 
+--> tham chiếu cục bộ tại hàm main() 
+--> tham chiếu ở hàm phụ bên ngoài hàm main()
+--> tham chiếu bên trong class c c
 
 Nào chúng ta cùng bắt đầu phần 1
 
@@ -26,7 +38,6 @@ int main(){
 	r= 20; 
 	std::cout<<r; // r rõ ràng là bằng 20
 	std::cout<<a; // lúc này a là 20
-	
 
 	std::cout<<&r; // r rõ ràng là bằng 20
 	std::cout<<&a; // lúc này a là 20
@@ -43,7 +54,7 @@ int main(){
 	
 	std::vector<int> vec{1,4,5,3,7};
 	
-	for (int& item : vec){
+	for (const int& item : vec){
 		std::cout<< item<<"\n";
 	}
 	
@@ -62,8 +73,6 @@ int main(){
 	Ừ,
 	Thế bọn bên trên giải quyết gì ở thực tế.
 	*/
-	
-	
 }
 
 // 
@@ -74,7 +83,7 @@ tỏ rõ sức mạnh của tham chiếu nhất
 trong lập trình C++.
 
 Đó chính là,
-`--> tham chiếu của gọi các hàm phụ bên ngoài hàm main()`
+`--> tham chiếu để gọi các hàm phụ bên ngoài hàm main()`
 
 // Để cho nó dễ hiểu từ đầu thì em nghĩ nên là
 // khởi tạo hàm với tham số có tham chiếu 
@@ -85,7 +94,6 @@ I.
 void change_a(int &a) 
 	a = 30;
 int main(){
-	
 	int a = 10;
 	change_a(a);
 	std::cout <<a<<"\n"; // a bây giờ là 30
@@ -99,12 +107,11 @@ void swap( int& c, int& d){
 	c = d;
 	d= temp;
 }
+
 int main(){
-	
 	int a =10, b = 20;
 	std::cout << a << b << '\n';
 	swap(a, b)
-	
 	return 0;
 }
 
@@ -113,8 +120,9 @@ when you define `void swap( int& c, int& d)`, you're telling with compiler that
 `c` and `d` is other name(alias) for the original variable.
 
 and when you call `swap(a, b)` 
-you will wonder if why dont we call `swap(&a, &b)`
-okey if you have same with my thinking, you are so deeply good.
+you will wonder if why dont we call `swap(&a, &b)` instead. 
+okey if you have same with my thinking, you are so deeply good. 
+So you imagine,
 `int&c` is a parameter you define 
 `a` is a variable you passing 
 
@@ -126,11 +134,11 @@ in the fact that , call function is other shape of `int&c = a;`
 Bây giờ thì tham chiếu là tham số ở bên trong hàm change_a 
 Có 2 vấn đề chính của phần chỉ truyền tham chiếu vào hàm 
 - Thứ nhất là biến bên ngoài sẽ bị thay đổi 
-nếu như bên trong hàm thay đổi nó 
+ nếu như bên trong hàm thay đổi nó 
  okey translate to English
 
 - The second, when we call change_a(a) at `main()` function,
-you just used share memory
+you just used share memory (same address)
 between int& a(in this function) and a(in main() function), 
 no longer need copy value, help your program run faster.
 
@@ -171,7 +179,7 @@ Other ability of (function return reference)
 We will process at topic 3 reference in class 
 
 With all mainly points about reference 
-we will focus on overload operator and setter/getter  use reference at class
+we will focus on overload operator and setter/getter use reference at class
 
 First, getter/setter with reference
 
@@ -179,16 +187,16 @@ class Box{
 	private:
 		int l, b, h;
 	public:
-		// Constructor 
-		// to initialize value for Box
+		// Constructor
+		// to initialize value for Box object
 		Box() : l{0}, b{0}, h{0} {}
-		Box(int length, int breadth, int height) : l{length},b{breadth}, h{height} {}
+		Box(int length, int breadth, int height) : l{length}, b{breadth}, h{height} {}
         Box(const Box& B) : l{B.l},b{B.b}, h{B.h} {}
         
 		//  reference  with l-value to 
 		Box& setLength(int val) { 
 			this->l = val; 
-			return *this; // Trả về tham chiếu đến chính đối tượng hiện tại
+			return *this; // Trả về tham chiếu đến chính đối tượng hiện tại 
 		}
 		Box& setBreadth(int val) { 
 			this->b = val; 
@@ -213,9 +221,9 @@ class Box{
 // Định nghĩa hàm nạp chồng toán tử <<
 // HÀM NÀY TRẢ VỀ THAM CHIẾU ĐẾN OSTREAM&
 std::ostream& operator<<(std::ostream& out, const Box& b) {
-    out << "Chieu dai: " << b.getLength() 
+    out << "Chieu dai: " 	<< b.getLength() 
         << ", Chieu rong: " << b.getBreadth() 
-        << ", Chieu cao: " << b.getHeight();
+        << ", Chieu cao: " 	<< b.getHeight();
     
     // Quan trọng: Trả về out (tham chiếu đến ostream)
     return out; 
