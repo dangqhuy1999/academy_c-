@@ -190,21 +190,63 @@ class Box{
 		// Constructor
 		// to initialize value for Box object
 		Box() : l{0}, b{0}, h{0} {}
+		
+		//Constructor with 3 parameters
 		Box(int length, int breadth, int height) : l{length}, b{breadth}, h{height} {}
-        Box(const Box& B) : l{B.l},b{B.b}, h{B.h} {}
-        
+
+		// Constructor with 3 parameters (CALL SETTER để to performs Validation)
+		// ⚠️ NOTICE: Not use Initialization List to assign l, b, h again.
+		
+		Box(int length, int breadth, int height) 
+		{
+			// Call setters. Setter will perform validation and assign the value 
+			// or print to any errors if the value is not validation (For example: negative).
+			this->setLength(length);
+			this->setBreadth(breadth);
+			this->setHeight(height); // Call a new Setter that is added.
+		}
+		
+        Box(const Box& B) : l{B.l}, b{B.b}, h{B.h} {}
+        Box(int length){
+			this->l = setLength(length);
+			this->b = 0;
+			this->h = 0;
+		}
+
+		// --- 2. GETTERS (Bắt buộc phải là const) ---
+		int getLength() const { return l; }
+		int getBreadth() const { return b; }
+		int getHeight() const { return h; }
+		
 		//  reference  with l-value to 
 		Box& setLength(int val) { 
-			this->l = val; 
-			return *this; // Trả về tham chiếu đến chính đối tượng hiện tại 
+			if(val < 0){
+				this->l = val; 
+				
+			} 
+			else{
+				std::cerr << "Lỗi: Chỉ số truy cập nằm ngoài phạm vi!\n";
+            	// Trong thực tế, nên ném ngoại lệ (throw exception)
+			}
+			return *this; // Return reference value ahead to current object 
 		}
 		Box& setBreadth(int val) { 
-			this->b = val; 
-			return *this; // Trả về tham chiếu đến chính đối tượng hiện tại
+			if(val >= 0){ 
+				this->b = val; 
+			} else {
+				// 💡 THAY THẾ std::cerr BẰNG THROW EXCEPTION
+				throw std::invalid_argument("Lỗi: Chiều rộng (" + std::to_string(val) + ") không được âm.");
+			}
+			return *this; 
 		}
 		Box& setHeight(int val) { 
-			this->h = val; 
-			return *this; // Trả về tham chiếu đến chính đối tượng hiện tại
+			if(val >= 0){ 
+				this->h = val; 
+			} else {
+				// 💡 THAY THẾ std::cerr BẰNG THROW EXCEPTION
+				throw std::invalid_argument("Lỗi: Chiều cao (" + std::to_string(val) + ") không được âm.");
+			}
+			return *this; 
 		}
 
 		// Getter KHÔNG đổi (const version) - Sử dụng khi đối tượng là const
