@@ -164,15 +164,42 @@ Constraints:
 
 
 ```
-`một lập trình viên giỏi hơn, toàn diện hơn (full-stack, end-to-end)` end to end là gì
-"End-to-end" (E2E), trong ngữ cảnh phát triển phần mềm và công nghệ thông tin, có nghĩa là khả năng hiểu và làm việc với toàn bộ quy trình hoặc chu trình của một hệ thống hoặc ứng dụng, từ đầu đến cuối [1].
-Đối với một lập trình viên được mô tả là "toàn diện hơn", "end-to-end" có nghĩa là họ có thể xử lý tất cả các khía cạnh của một dự án, bao gồm:
-Phía máy khách (Client-side / Frontend): Giao diện người dùng, trải nghiệm người dùng, thiết kế web/ứng dụng [1].
-Phía máy chủ (Server-side / Backend): Logic nghiệp vụ, xử lý dữ liệu, xác thực, bảo mật [1].
-Cơ sở dữ liệu (Database): Thiết kế, quản lý, truy vấn dữ liệu [1].
-Hạ tầng và triển khai (Infrastructure & Deployment): Cài đặt, cấu hình máy chủ, triển khai ứng dụng, tự động hóa quy trình (DevOps) [1].
-Kiểm thử (Testing): Viết các bài kiểm tra cho toàn bộ hệ thống, từ các thành phần nhỏ đến toàn bộ quy trình người dùng [1].
-Tóm lại, một lập trình viên E2E có thể chịu trách nhiệm hoàn toàn về việc biến một ý tưởng thành một sản phẩm hoạt động hoàn chỉnh, mà không cần sự can thiệp đáng kể từ các chuyên gia ở các lĩnh vực khác [1].
+`một lập trình viên giỏi hơn, 
+toàn diện hơn (full-stack, end-to-end)` 
+end to end là gì
+"End-to-end" (E2E), 
+trong ngữ cảnh phát triển phần mềm 
+và công nghệ thông tin, 
+có nghĩa là khả năng hiểu và làm việc 
+với toàn bộ quy trình hoặc chu trình 
+của một hệ thống hoặc ứng dụng, từ đầu đến cuối [1].
+Đối với một lập trình viên 
+được mô tả là "toàn diện hơn", 
+"end-to-end" có nghĩa là họ có thể xử lý 
+tất cả các khía cạnh của một dự án, bao gồm:
+
+Phía máy khách (Client-side / Frontend): 
+Giao diện người dùng, 
+trải nghiệm người dùng, 
+thiết kế web/ứng dụng [1].
+Phía máy chủ (Server-side / Backend): 
+Logic nghiệp vụ, xử lý dữ liệu, xác thực, bảo mật [1].
+
+Cơ sở dữ liệu (Database): 
+Thiết kế, quản lý, truy vấn dữ liệu [1].
+Hạ tầng và triển khai (Infrastructure & Deployment): 
+Cài đặt, cấu hình máy chủ, 
+triển khai ứng dụng, tự động hóa quy trình (DevOps) [1].
+
+Kiểm thử (Testing): 
+Viết các bài kiểm tra cho toàn bộ hệ thống, 
+từ các thành phần nhỏ đến toàn bộ quy trình người dùng [1].
+Tóm lại, một lập trình viên E2E 
+có thể chịu trách nhiệm hoàn toàn 
+về việc biến một ý tưởng 
+thành một sản phẩm hoạt động hoàn chỉnh, 
+mà không cần sự can thiệp đáng kể 
+từ các chuyên gia ở các lĩnh vực khác [1].
 ```
 
 

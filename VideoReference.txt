@@ -222,7 +222,6 @@ class Box{
 		Box& setLength(int val) { 
 			if(val < 0){
 				this->l = val; 
-				
 			} 
 			else{
 				std::cerr << "Lỗi: Chỉ số truy cập nằm ngoài phạm vi!\n";
@@ -257,6 +256,20 @@ class Box{
 		// Getter ĐỔI (non-const version) - Sử dụng khi muốn thay đổi giá trị
 		int& getHeight() { 
 			return h; 
+		}
+
+		// Overload operator
+		bool operator<(const Box& b) const {
+			if(this->l < b.l){
+				return True;
+			}
+			else if(this->l == b.l && this->b < b.b){
+				return True;
+			}
+			else if(this->l == b.l && this->b == b.b && this->h < b.h){
+				return True;
+			}
+			return False;
 		}
 }
 
