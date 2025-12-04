@@ -440,3 +440,44 @@ bạn sắp xếp lịch cho việc cá nhân học code, người yếu ,gia đ
 tâm lý dễ nãn khi không biết sắp xếp hợp lý 
 hiêu suát công việc sẽ giảm theo cấp số nhân.
 ```
+
+
+```basic CI/CD
+CI: 
+- Unit tests & Integration Tests:
+  + Hệ thống tự động chạy trăm, nghìn bài test để đảm bảo thay đổi
+    không làm hỏng các tính năng hiện có
+    Nếu bất kì test nào thất bại, 
+    bạn sẽ nhận được thông báo ngay lập tức.
+- Static Code Analysis
+  + Kiểm tra chất lượng code, tìm lỗi cú pháp, lỗ hổng bảo mật,
+    hoặc các đoạn code không tuân thủ quy tắc lập trình.
+- Build Artifacts
+  + Nếu code là ứng dụng(Như Java, Go, hoặc Docker Image), CI sẽ Tự
+    động biên dịch(compile) và đóng gói nó thành một sản phẩm(artifact) 
+    để sẵn sàng triển khai.
+CD:
+- Staging Environment:
+  + Tự động triển khai code lên môi trường thử nghiệm(staging)
+    để nhóm QA(kiểm thử) có thể kiểm tra thủ công lần cuối.
+- Production environment: 
+  + Sau khi các bài kiểm tra thành công, 
+    code có thể được tự động(hoặc bán tự động)
+    triển khai lên môi trường sản xuất(Production), 
+    nơi khách hàng sử dụng.
+- Rollback: 
+  + Nếu việc triển khai gặp lỗi, 
+    hệ thống CI/CD thường có khả năng quay ngược(rollback)
+    về phiên bản hoạt động gần nhất 
+    một cách nhanh chóng.
+
+Thay vì bạn phải SSH vào server , chạy các lệnh build, copy file thủ công(rất dễ sai sót)
+CD thực hiện tất cả chỉ trong vài phút.
+
+Nếu không có CI/CD, 
+bạn phải làm thủ công tất cả các bước 
++ kiểm tra
++ biên dịch
++ copy file lên server
+CI/CD loại bỏ công việc lặp lại đó.
+```
