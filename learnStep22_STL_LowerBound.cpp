@@ -25,14 +25,49 @@ int main() {
     Learn how to use lower bound 
     to solve this problem by clicking here. 
 
-    Input format:
+    **Input format:**
     The first line of the input contains
     the number of integers N.
     The next line contains N integers in sorted orders.
     THe next line contains Q, 
     the number of queries. 
     Then Q lines follow each containing a single integer Y.
+    Note: If the same number is present multiple times,
+    you have to print the first index 
+    at which it occurs.
+    Also,
+    the input is such that 
+    you always have an answer for each query.
     
+    **Output format:**
+    For each query, you have to print "Yes"
+    (without quotes)
+    if the number is present in the array
+    and at which index(1-based) it is present
+    separated by a space.
+    If the number is not present
+    you have to print "No"(without the quotes)
+    followed by the index of 
+    the next smallest number just greater than that number.
+    You have to output each query in a new line.
+    **Sample Input:**
+    ```
+    8
+    1 1 2 2 6 9 9 15
+    4
+    1
+    4
+    9
+    15
+    ```
+
+    **Sample Output:**
+    ```
+    Yes 1
+    No 5
+    Yes 6
+    Yes 8
+    ```
     
     Chức năng   lower_bound(value)              upper_bound(value)
 
