@@ -453,8 +453,9 @@ CI:
   + Kiểm tra chất lượng code, tìm lỗi cú pháp, lỗ hổng bảo mật,
     hoặc các đoạn code không tuân thủ quy tắc lập trình.
 - Build Artifacts
-  + Nếu code là ứng dụng(Như Java, Go, hoặc Docker Image), CI sẽ Tự
-    động biên dịch(compile) và đóng gói nó thành một sản phẩm(artifact) 
+  + Nếu code là ứng dụng(Như Java, Go, hoặc Docker Image), 
+    CI sẽ Tự động biên dịch(compile) 
+    và đóng gói nó thành một sản phẩm(artifact) 
     để sẵn sàng triển khai.
 CD:
 - Staging Environment:
