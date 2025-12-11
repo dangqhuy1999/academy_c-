@@ -73,7 +73,7 @@ int main() {
 	std::cout << std::setw(0xf) << std::internal;
 	while(T--) {
 		double A; std::cin >> A;
-		double B; std::cin >> B;
+		//double B; std::cin >> B;
 		//double C; std::cin >> C;
         long long truncatedA = static_cast<long long>(A);
         std::cout   << std::dec << std::noshowbase << std::setw(2); 
