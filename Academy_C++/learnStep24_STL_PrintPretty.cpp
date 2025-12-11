@@ -82,8 +82,6 @@ int main() {
                     << std::nouppercase // Lowercase letters
                     << truncatedA // The truncated number
                     << std::endl;
-        
-
 	}               
 	return 0;
 }
