@@ -55,6 +55,10 @@ int main()
     scanf("%[^\n]%*c", &s);
     printf("Hello, World!\n.");
     printf("%s\n", s);
-
+    
+    // int val = 2;
+    // while (val--) {
+    //     printf("%d\n", val);
+    // }
     return 0;
 }
