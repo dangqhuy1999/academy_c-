@@ -1,12 +1,28 @@
 #include <stdio.h>
 
 int main() {
-    int a = 5; // 0x5
+    int a = 5; // 0x5 0b0101
     // Turn on 3rd bit
     a = a | (1 << 2); // Set 3rd bit
+
+    /*
+    00000101
+    &
+    11111101
+    --------
+    00000101
+    */
+
     printf("After turning on 3rd bit: a = %d\n", a);
     // Turn off 2nd bit
     a = a & ~(1 << 1); // Clear 2nd bit
+    /*
+    00000101
+    & 
+    11111101
+    --------
+    00000101
+    */
     printf("After turning off 2nd bit: a = %d\n", a);
     // Toggle 1st bit
     a = a ^ (1<< 0); // Toggle 1st bit
@@ -17,6 +33,5 @@ int main() {
     } else {
         printf("4th bit is not set\n");
     }
-
     return 0;
 }
