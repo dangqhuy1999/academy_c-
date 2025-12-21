@@ -1,6 +1,8 @@
 #include <stdio.h>
 
 int main() {
+    // 0x89ABCDEF  ->  0xCDEF89AB
+    
     unsigned int x = 0x89ABCDEF;
     // In số thập phân thông thường
     printf("Thập phân: %d\n", x);       // Kết quả: 255
@@ -20,5 +22,22 @@ int main() {
 
     // In số Hex chữ hoa và có 0x phía trước
     printf("Hex chuẩn nhúng: %#X\n", x); // Kết quả: 0XFF
+    
+    x = 0x89ABCDEF;
+
+    // 0x89ABCDEF  ->  0xEFCDAB89
+
+    x = ((x & 0xEF) << 24) | ((x & 0xCD00) << 8) | ((x & 0xAB0000) >> 8) | ((x & 0x89000000) >> 24);
+    // x = ((x & 0xEF) << 24) + ((x & 0xCD00) << 8) + ((x & 0xAB0000) >> 8) + ((x & 0x89000000) >> 24);
+
+    // In số thập phân thông thường
+    printf("Thập phân: %d\n", x);       // Kết quả: 255
+
+    // In số Hex chữ thường
+    printf("Hex thường: %x\n", x);      // Kết quả: ff
+
+    // In số Hex chữ hoa và có 0x phía trước
+    printf("Hex chuẩn nhúng: %#X\n", x); // Kết quả: 0XFF
+    
     return 0;
 }
