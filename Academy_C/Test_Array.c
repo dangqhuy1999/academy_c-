@@ -49,6 +49,7 @@ int main() {
     [-Wwrite-strings]" 
     occurs because in C++, 
     string literals (text in double quotes) 
+    string literals (text in double quotes) 
     are `constant` by default 
     and cannot be assigned to 
     a non-constant char* pointer. 
