@@ -1,11 +1,15 @@
 #include <stdio.h>
 #include <stdint.h> // use for uint8_t, uint32_t
 
+
+// If you want to storage the difference data type(int, float , char, array), 
+// you will hard to create more array
+// struct will help you do it
+
 typedef struct {
     int time; // 32 bits
     float temp; // 32 bits
     int huminity; // 32 bits
-    char arrBit[50]; // 50*8*1 bits
 } S_Censor;
 
 
@@ -38,7 +42,11 @@ B       B       B       A       0x0004
 
 int main() {
 
-    S_Censor a;
+    S_Censor a; // Un-initiallized variable
+    S_Censor b = {1,20.4,4};// Initallized fully variable
+    S_Censor c = {.time=2,.temp = 30.41, .huminity= 20 }; // Initallized fully variable with attribute name 
+    S_Censor d = {.time = 3, .huminity = 22}; // Initallized partly variable with attribute name
+
     S_Censor * pointer = &a;
 
     // (*pointer).time = 2;
