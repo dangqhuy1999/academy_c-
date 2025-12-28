@@ -39,7 +39,8 @@ int main() {
     nó sẽ bị đầy ngay lập tức và treo máy.
 
     Lưu vào Text Code (Flash) (Read-only when runtime): 
-    Flash của Pico lên tới 2MB (lớn hơn RAM rất nhiều). 
+    Flash của Pico lên tới 2MB (lớn hơn RAM rất nhiều).
+    (In microcotroller 0 ís at the first component address of flash memory) 
     Việc để những thứ "không bao giờ thay đổi" 
     ở Flash là một chiến thuật cực kỳ thông minh để tiết kiệm tài nguyên.
 
