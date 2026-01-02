@@ -7,8 +7,12 @@
 #include <stdint.h> // using uint8_t
 
 // Pre-Define Macro
+// instead <stdbool.h>
 #define TRUE                    (1U)
 #define FALSE                   (0U)
+// instead <stdbool.h>
+
+ 
 #define QUEUE_EMPTY             (0U)
 #define QUEUE_EMPTY_PEEK_VALUE  (0U)
 
@@ -20,7 +24,19 @@ typedef struct { // allocate for this struct is 8 bytes memory
 } Queue_Types;
 
 // Define functions(APIs)
-void Queue_Push();
 
+/*
+What do you think about that?
+I need to perform 2 action:
+- Push a task into queue (check isFull())
+- Pop a task out of queue (check isEmpty())
+- Peek, pop to check not pop out(integrity)
+*/
+
+void pushQueue(Queue_Types * queue, uint32_t num);
+void popQueue(Queue_Types * queue); 
+uint32_t peekQueue(Queue_Types * queue); // Read-only
+uint8_t isFull(Queue_Types * queue);
+uint8_t isEmpty(Queue_Types * queue);
 
 #endif /* _QUEUE_H_ */
