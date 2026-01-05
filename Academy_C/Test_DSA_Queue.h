@@ -8,13 +8,12 @@
 
 // Pre-Define Macro
 // instead <stdbool.h>
-#define TRUE                    (1U)
-#define FALSE                   (0U)
+#define TRUE                    ((uint8_t)1U)
+#define FALSE                   ((uint8_t)0U)
 // instead <stdbool.h>
 
- 
-#define QUEUE_EMPTY             (0U)
-#define QUEUE_EMPTY_PEEK_VALUE  (0U)
+#define QUEUE_EMPTY             ((uint8_t)0U)
+#define QUEUE_EMPTY_PEEK_VALUE  ((uint8_t)0U)
 
 // Create a Struct type for Queue.
 typedef struct { // allocate for this struct is 8 bytes memory

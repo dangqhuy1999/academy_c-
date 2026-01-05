@@ -21,6 +21,7 @@
 //      descrease capacity and front by 1 unit.
 //      before we begin, do action isEmpty() to check
 
+
 int main() {
     // array in RAM (stack)
     // malloc in RAM (heap)
@@ -29,4 +30,20 @@ int main() {
     printf("%d", sizeof(a));
     
     return 0;
+}
+
+// function check Queue wonder isFull or not
+uint8_t isFull(Queue_Types * queue){
+    if(queue->Capacity == queue->Size){
+        return TRUE;
+    }
+    return FALSE;
+}
+
+// function check Queue wonder isEmpty or not
+uint8_t isEmpty(Queue_Types * queue){
+    if(queue->Capacity ==  QUEUE_EMPTY){
+        return TRUE;
+    }
+    return FALSE;
 }
