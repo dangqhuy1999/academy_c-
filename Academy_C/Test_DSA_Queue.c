@@ -26,9 +26,24 @@ int main() {
     // array in RAM (stack)
     // malloc in RAM (heap)
 
-    int a;
-    printf("%d", sizeof(a));
+    Queue_Types myQueue;
+    myQueue.Front = -1;
+    myQueue.Rear = -1;
+    myQueue.Capacity = 0;
+    myQueue.Size = QUEUE_DEFAULT_SIZE;
+    myQueue.arrayQueue = (uint32_t *)malloc(myQueue.Size * sizeof(uint32_t));
     
+    
+    pushQueue(&myQueue, 10);
+    pushQueue(&myQueue, 20);
+    pushQueue(&myQueue, 30);
+
+    printf("Size: %d\nCapacity: %d\nPeek: %u\n", myQueue.Size, myQueue.Capacity, peekQueue(&myQueue)); // Expected output: 10
+    popQueue(&myQueue);
+    printf("Peek after pop: %u\n", peekQueue(&myQueue)); // Expected output: 20
+    // Free allocated memory
+    free(myQueue.arrayQueue);   
+
     return 0;
 }
 
@@ -47,3 +62,53 @@ uint8_t isEmpty(Queue_Types * queue){
     }
     return FALSE;
 }
+
+//Push data into Queue
+void pushQueue(Queue_Types * queue, uint32_t num){
+    // Check if queue is full
+    if(!isFull(queue)){
+        if (queue->Front == -1) {
+            queue->Front = 0; // Initialize front if it's the first element
+        }
+        // Increment front and rear
+        queue->Rear ++;
+        // Add new element to the queue
+        queue->arrayQueue[queue->Rear] = num;
+        // increment capacity
+        queue->Capacity ++;
+    } else {
+        printf("Queue is full\n");  
+    }
+    
+}
+
+// Pop data out of Queue
+void popQueue(Queue_Types * queue){
+    // Check if queue is empty
+    if(!isEmpty(queue)){
+        // Increment front to remove the element
+        queue->Front++;
+        // decrement capacity
+        queue->Capacity --;
+    } else {
+        printf("Queue is empty\n");
+    }
+}
+// Peek data at front of Queue
+uint32_t peekQueue(Queue_Types * queue){
+    // Check if queue is empty
+    if(isEmpty(queue)){
+        printf("Queue is empty\n");
+        return QUEUE_EMPTY_PEEK_VALUE;
+    }
+    return queue->arrayQueue[queue->Front];
+}
+
+uint32_t backQueue(Queue_Types * queue){
+    // Check if queue is empty
+    if(isEmpty(queue)){
+        printf("Queue is empty\n");
+        return QUEUE_EMPTY_PEEK_VALUE;
+    }
+    return queue->arrayQueue[queue->Rear];
+}   

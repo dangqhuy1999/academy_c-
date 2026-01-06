@@ -15,6 +15,9 @@
 #define QUEUE_EMPTY             ((uint8_t)0U)
 #define QUEUE_EMPTY_PEEK_VALUE  ((uint8_t)0U)
 
+// Default size of Queue
+#define QUEUE_DEFAULT_SIZE     ((uint8_t)5U)
+
 // Create a Struct type for Queue.
 typedef struct { // allocate for this struct is 8 bytes memory
     int8_t Front, Rear;         // sign data type + and - that represent index in queue
@@ -35,6 +38,7 @@ I need to perform 2 action:
 void pushQueue(Queue_Types * queue, uint32_t num);
 void popQueue(Queue_Types * queue); 
 uint32_t peekQueue(Queue_Types * queue); // Read-only
+uint32_t backQueue(Queue_Types * queue); // Read-only
 uint8_t isFull(Queue_Types * queue);
 uint8_t isEmpty(Queue_Types * queue);
 
